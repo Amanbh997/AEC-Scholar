@@ -1,0 +1,37 @@
+{
+  "name": "aec-scholar-marketplace",
+  "displayName": "AEC Scholar Marketplace",
+  "description": "A curated marketplace hosting the AEC Scholar academic research toolkit for Architecture, Engineering & Construction.",
+  "owner": {
+    "name": "COERA",
+    "email": "ab@coera.io"
+  },
+  "plugins": [
+    {
+      "name": "aec-scholar",
+      "source": "./aec-scholar",
+      "displayName": "AEC Scholar",
+      "description": "An end-to-end academic research toolkit for Architecture, Engineering & Construction: systematic reviews, bibliometrics, methodology design, scholarly writing, peer review, citations and deep AEC domain knowledge.",
+      "version": "1.1.0",
+      "author": {
+        "name": "COERA",
+        "email": "ab@coera.io"
+      },
+      "keywords": [
+        "academic-research",
+        "AEC",
+        "architecture",
+        "civil-engineering",
+        "construction",
+        "BIM",
+        "literature-review",
+        "systematic-review",
+        "bibliometrics",
+        "scholarly-writing",
+        "PRISMA"
+      ],
+      "category": "research",
+      "defaultEnabled": true
+    }
+  ]
+}

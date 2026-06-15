@@ -1,0 +1,120 @@
+% =====================================================================
+%  AEC Scholar — generic academic article template
+%  Replace the generic `article` class with your target journal's class
+%  (elsarticle / IEEEtran / ascelike-new / sn-jnl) before submission.
+%  Compile:  pdflatex -> bibtex -> pdflatex -> pdflatex   (or: latexmk -pdf)
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+
+% --- Encoding & fonts (for pdfLaTeX; switch to fontspec under Lua/XeLaTeX) ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}                 % better justification
+
+% --- Layout ---
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}                  % \onehalfspacing for review copies
+\usepackage{lineno}                    % \linenumbers for review (many journals require)
+
+% --- Graphics, tables, math, units ---
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+\usepackage{booktabs}                  % professional tables (no vertical rules)
+\usepackage{subcaption}                % subfigures
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}                   % \qty{}{}, \num{}, S-columns
+\sisetup{detect-all=true}
+
+% --- References & links (load hyperref before cleveref) ---
+\usepackage[numbers,sort&compress]{natbib}   % or author-year per venue
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+% --- Handy review note macro (remove before submission) ---
+\usepackage{xcolor}
+\newcommand{\todo}[1]{\textcolor{red}{[\textbf{TODO:} #1]}}
+
+% =====================================================================
+\title{A Concise, Specific, Keyword-Rich Title:\\ Method and Context Make It Discoverable}
+\author{First Author\thanks{Corresponding author: author@coera.io} \and Second Author}
+\date{\today}
+
+\begin{document}
+\maketitle
+% \linenumbers   % <- enable for review submission
+
+\begin{abstract}
+\noindent
+% Context/problem -> gap/objective -> method -> key results (concrete) -> contribution.
+State the problem and why it matters, the specific gap, the method, the key quantitative findings,
+and the contribution — in 150--250 words, self-contained, no citations, no undefined acronyms.
+\end{abstract}
+
+\noindent\textbf{Keywords:} keyword one; keyword two; keyword three; keyword four; keyword five
+
+% =====================================================================
+\section{Introduction}\label{sec:intro}
+% CARS move: (1) establish the territory, (2) establish the niche / GAP, (3) occupy it.
+Context and significance of the topic for the built environment.\ \todo{cite}
+The specific gap or unresolved problem in prior work.
+This paper contributes \todo{state the explicit contribution}.
+The remainder is organised as follows: \Cref{sec:related} reviews related work; \Cref{sec:method}
+describes the methodology; \Cref{sec:results} presents results; \Cref{sec:discussion} discusses them;
+and \Cref{sec:conclusion} concludes.
+
+\section{Related Work / Background}\label{sec:related}
+Synthesise prior work thematically and position the gap. Define the conceptual framework.
+
+\section{Methodology}\label{sec:method}
+Describe the research design with enough detail to reproduce: data/sample, tools (with versions),
+procedure, analysis, and validity/reliability measures. Reference the workflow in \Cref{fig:workflow}.
+
+\begin{figure}[t]
+  \centering
+  % \includegraphics[width=0.8\linewidth]{workflow.pdf}
+  \fbox{\parbox[c][4cm][c]{0.8\linewidth}{\centering\itshape Replace with research-workflow figure (vector PDF).}}
+  \caption{Overview of the research workflow.}
+  \label{fig:workflow}
+\end{figure}
+
+\section{Results}\label{sec:results}
+Report findings without interpretation. Lead with the answer to each research question.
+
+\begin{table}[t]
+  \centering
+  \caption{Summary of results.}
+  \label{tab:results}
+  \begin{tabular}{l S[table-format=3.1] S[table-format=2.2]}
+    \toprule
+    Case & {Metric A (\unit{\kilo\watt\hour\per\meter\squared})} & {Metric B} \\
+    \midrule
+    Baseline & 145.0 & 1.00 \\
+    Proposed & 118.4 & 0.82 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Discussion}\label{sec:discussion}
+Interpret the results, compare with prior work, state theoretical and practical implications, and be
+explicit about limitations (especially generalisability) and future work.
+
+\section{Conclusion}\label{sec:conclusion}
+Restate the contribution and key findings, implications, limitations, and future directions — no new data.
+
+% --- Declarations (many venues now require these) ---
+\section*{Declarations}
+\textbf{Funding:} \todo{sources + grant numbers}.\\
+\textbf{Conflicts of interest:} The authors declare none.\\
+\textbf{Data availability:} \todo{repository + DOI, or reason data cannot be shared}.\\
+\textbf{CRediT author statement:} \todo{roles per author}.\\
+\textbf{Use of AI tools:} \todo{disclose per venue policy, if applicable}.
+
+\section*{Acknowledgements}
+Non-author contributions and support.
+
+% --- Bibliography ---
+\bibliographystyle{plainnat}   % swap for the venue style (elsarticle-num / IEEEtran / ascelike)
+\bibliography{references}      % references.bib in the same folder
+
+\end{document}

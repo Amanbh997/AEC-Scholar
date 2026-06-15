@@ -1,0 +1,29 @@
+{
+  "$comment": [
+    "OPTIONAL example MCP server config for connecting AEC Scholar to live scholarly APIs.",
+    "This file is NOT loaded automatically and is NOT referenced by plugin.json — it is a template.",
+    "Copy the entries you want into your own project .mcp.json (or use `claude mcp add`),",
+    "and replace each placeholder command/package with a REAL, vetted MCP server you trust.",
+    "Verify any server before use — it receives tool access. See mcp/README.md."
+  ],
+  "mcpServers": {
+    "openalex": {
+      "command": "npx",
+      "args": ["-y", "REPLACE_WITH_A_REAL_OPENALEX_MCP_SERVER"],
+      "env": {}
+    },
+    "crossref": {
+      "command": "uvx",
+      "args": ["REPLACE_WITH_A_REAL_CROSSREF_MCP_SERVER"],
+      "env": {}
+    },
+    "semantic-scholar": {
+      "command": "npx",
+      "args": ["-y", "REPLACE_WITH_A_REAL_SEMANTIC_SCHOLAR_MCP_SERVER"],
+      "env": {
+        "$comment_key": "Optional: set SEMANTIC_SCHOLAR_API_KEY for higher rate limits",
+        "SEMANTIC_SCHOLAR_API_KEY": ""
+      }
+    }
+  }
+}
